@@ -1,0 +1,37 @@
+// Mixin für Margin
+@mixin margin($side, $value) {
+  @if $side == 'all' { margin: #{$value}px; }
+  @else if $side == 't' { margin-top: #{$value}px; }
+  @else if $side == 'r' { margin-right: #{$value}px; }
+  @else if $side == 'b' { margin-bottom: #{$value}px; }
+  @else if $side == 'l' { margin-left: #{$value}px; }
+  @else if $side == 'x' { margin-left: #{$value}px; margin-right: #{$value}px; }
+  @else if $side == 'y' { margin-top: #{$value}px; margin-bottom: #{$value}px; }
+}
+
+// Mixin für Padding
+@mixin padding($side, $value) {
+  @if $side == 'all' { padding: #{$value}px; }
+  @else if $side == 't' { padding-top: #{$value}px; }
+  @else if $side == 'r' { padding-right: #{$value}px; }
+  @else if $side == 'b' { padding-bottom: #{$value}px; }
+  @else if $side == 'l' { padding-left: #{$value}px; }
+  @else if $side == 'x' { padding-left: #{$value}px; padding-right: #{$value}px; }
+  @else if $side == 'y' { padding-top: #{$value}px; padding-bottom: #{$value}px; }
+}
+
+// Generiere Klassen für Margin und Padding
+@for $i from 1 through 20 {
+  .m-#{$i} { @include margin(all, $i); }
+  .mt-#{$i}, .my-#{$i} { @include margin(t, $i); }
+  .mr-#{$i}, .mx-#{$i} { @include margin(r, $i); }
+  .mb-#{$i}, .my-#{$i} { @include margin(b, $i); }
+  .ml-#{$i}, .mx-#{$i} { @include margin(l, $i); }
+  
+  .p-#{$i} { @include padding(all, $i); }
+  .pt-#{$i}, .py-#{$i} { @include padding(t, $i); }
+  .pr-#{$i}, .px-#{$i} { @include padding(r, $i); }
+  .pb-#{$i}, .py-#{$i} { @include padding(b, $i); }
+  .pl-#{$i}, .px-#{$i} { @include padding(l, $i); }
+}
+

@@ -1,0 +1,49 @@
+.button {
+    padding: $spacing-3; // Bequemes Padding
+    background-color: $dark-background; // Standard-Hintergrundfarbe
+    color: $light-text; // Textfarbe
+    border: none; // Keine Ränder
+    border-radius: $border-radius; // Rundung, definiert als 0px
+    font-family: $font-family; // Schriftart
+    font-size: $font-size-m; // Mittlere Schriftgröße
+    text-align: center;
+    cursor: pointer;
+    margin: 10px;
+    
+    transition: $trans-basis; // Sanfte Übergänge für alle Änderungen
+    box-shadow: $shadow-s; // Leichter Schatten für Tiefe
+  
+    &.button-success {
+        background-color: $success-color; // Erfolgsfarbe
+      }
+    
+      &.button-light {
+        background-color: #fff; // Informationsfarbe
+        color: $light-text;
+        
+      }
+    
+      &.button-warning {
+        background-color: $warning-color; // Warnfarbe
+      }
+    
+      &.button-danger {
+        background-color: $danger-color; // Gefahrenfarbe
+      }
+
+    &:hover {
+      background-color: lighten($dark-background, 10%); // Aufhellen beim Hover
+      color: $hover-dark-text; // Textfarbe ändern beim Hover
+      box-shadow: $shadow-m; // Mittlerer Schatten beim Hover
+
+
+
+  
+    &:active {
+      transform: scale($active-scale); // Verkleinern beim Klicken
+      box-shadow: $shadow-s; // Zurück zum kleinen Schatten
+    }
+  
+  }
+}
+

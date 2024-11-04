@@ -1,0 +1,161 @@
+.ablauf {
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+
+        color: $dark-background;
+        margin-bottom: 10px;
+        font-size: $font-size-m;
+    }
+
+    p {
+     
+        
+        text-align: center;
+    }
+    a{
+
+
+        justify-content: center;
+       
+
+      
+
+        color: $light-text;
+   
+
+        align-self: center;
+       
+        
+
+        &:hover{
+            text-decoration: none;
+            color: $dark-background;
+            
+        }
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 600px;
+
+
+      margin-bottom: 10px;
+
+        padding: 20px;
+        background-color: #E4DDD2;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        img {
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .desktop {
+            display: none;
+        }
+    }
+
+    .ablauftext {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1;
+        position: relative;
+
+        h1, p {
+            color: $dark-background;
+            
+            margin: 5px 0;
+        }
+    }
+
+    .ablaufbutton {
+        display: flex;
+        justify-content: center;
+        width: auto;
+        background-color: $light-background;
+        color: $light-text;
+        transition: background-color 0.3s ease;
+        align-self: center;
+        border: 1px solid $light-background;
+
+
+        &:hover {
+            background-color: $dark-background;
+            color: $dark-text;
+            border: 1px solid $light-background;
+        }
+
+
+    }
+
+
+    @media (min-width: 992px) {
+        .card {
+            flex-direction: row;
+            margin: 0;
+      height: 500px;
+            padding: 0;
+
+            &.image-left {
+                img {
+                    order: 0;
+                }
+                .ablauftext {
+                    order: 1;
+                    align-items: flex-start;
+                }
+            }
+
+            &.image-right {
+                img {
+                    order: 1;
+                }
+                .ablauftext {
+                    order: 0;
+                    align-items: flex-end;
+                    text-align: right;
+                }
+            }
+
+            img {
+                margin: 0;
+                width: 50%;
+            }
+
+            .mobile {
+                display: none;
+            }
+
+            .desktop {
+                display: block;
+            }
+
+            p {
+                text-align: inherit; // Dies gewährleistet, dass der Text die Ausrichtung von .ablauftext erbt
+            }
+        }
+
+        .ablauftext {
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .ablaufbutton {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            align-self: flex-end;
+        }
+    }
+}
+

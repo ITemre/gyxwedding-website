@@ -1,0 +1,192 @@
+// Base Typography
+body {
+  font-family: $font-family2;
+
+  line-height: $line-height;
+
+}
+
+
+
+
+
+
+// Container
+.container {
+
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+
+
+
+}
+
+// Wrapper für zusätzliche Gestaltung
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
+}
+
+
+
+
+
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+
+  font-family: $font-family;
+  
+  font-weight: bold;
+
+}
+
+h1 {
+  font-size: $font-size-l;
+  line-height: $line-height;
+}
+
+h2 {
+  font-size: $font-size-m;
+  line-height: $line-height;
+}
+
+h3 {
+  font-size: $font-size-s;
+  line-height: $line-height;
+}
+
+// Define further for h4, h5, h6 as needed
+
+
+// Paragraphs
+p {
+  margin-bottom: $spacing-1;
+  font-size: $font-size-m;
+
+
+}
+
+span{
+  font-size: $font-size-s;
+  
+}
+
+// Links
+a {
+
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+
+  }
+}
+
+// Lists
+ul,
+ol {
+  padding-left: 20px;
+  margin-bottom: $spacing-1;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+li {
+  margin-bottom: $spacing-2;
+}
+
+
+
+
+// Flexbox Utilities
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+// Additional useful classes
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+
+.w-50 {
+  width: 50%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+// Blockquote
+blockquote {
+  padding: 40px;
+  margin: 0 0 $spacing-1;
+
+  font-style: italic;
+
+}

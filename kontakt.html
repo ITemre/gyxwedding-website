@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GyxWedding</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/a7646bbf3c.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+
+<body class="light">
+
+        
+  
+        <header>
+            <div class="content">
+                <label for="toggle" class="hamburger">
+                    <span class="hambuger-line"></span>
+                    <span class="hambuger-line"></span>
+                    <span class="hambuger-line"></span>
+                </label>
+                <input type="checkbox" id="toggle" class="toggle-checkbox" hidden>
+                <nav class="navigation">
+                    <h1 class="company">Gyx Wedding</h1>
+                    <ul class="text-center hover-scale">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="filme.html">Filme</a></li>
+                        <li><a href="fotos.html">Fotos</a></li>
+                  
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </header>
+            
+
+<main>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="active" aria-current="page">Kontakt</li>
+            </ul>
+        </nav>
+
+        <div class="contact-container">
+            <aside class="sidebar">
+                <h2>Kontaktdetails</h2>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> info@gyxfilms.com</li>
+                    <li><i class="fas fa-phone"></i>+49 176 2043 1022</li>
+                    <li><i class="fas fa-map-marker-alt"></i>Stuttgart</li>
+                </ul>
+                <h2>Social Media</h2>
+                <ul class="social-media">
+                    <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Gyxwedding</a></li>
+                    <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Gyxfilms</a></li>
+                    <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> benimle.evlenirmisiniz_</a></li>
+
+                </ul>
+            </aside>
+
+            <section id="kontaktsection" class="contact">
+                <h2>Kontaktieren Sie uns</h2>
+                <form id="contact-form" action="/php/mail.php" method="post">
+                    <label for="name">Ihr Name</label>
+                    <input type="text" id="name" name="name" required>
+            
+                    <label for="email">Ihre E-Mail-Adresse</label>
+                    <input type="email" id="email" name="email" required>
+            
+                    <label for="phone">Ihre Telefonnummer</label>
+                    <input type="tel" id="phone" name="phone" required>
+            
+                    <label for="message">Ihre Nachricht</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+            
+                    <button id="sendButton" type="submit" class="button buttonkontakt">Nachricht senden</button>
+                </form>
+                <div id="responseMessage"></div>
+            </section>
+            
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <div class="footerlogo"></div>
+            <p class="footertext">Cinematisch und Zeitlos</p>
+        </div>
+        <div class="footer-social">
+            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="footer-links">
+            <a href="impressum.html">Impressum</a>
+            <a href="kontakt.html">Kontakt</a>
+            <p>© 2024 Görkem Yalcin. Alle Rechte vorbehalten.</p>
+            <p>Programmierung,Umsetzung&Design : <a href="https://emre-it.de" target="_blank">www.emre-it.de </a></p>
+        </div>
+    </div>
+</footer>
+<script src="js/gyx.js"></script>
+<script src="js/mail.js"></script>
+</body>
+</html>
+

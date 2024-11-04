@@ -1,0 +1,136 @@
+/* Reset.scss Beispiel */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Entfernt Standard-Padding und -Margin */
+body,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul,
+figure,
+hr,
+fieldset, legend {
+
+  margin: 0;
+  padding: 0;
+}
+
+/* Setzt `body` auf 1rem Line-height und eine Basis-Schriftgröße von 16px */
+body {
+  font-size: 100%; /* 16px */
+  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+/* HTML5 display-role reset für ältere Browser */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, main {
+  display: block;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Listen */
+ul, ol {
+  list-style: none;
+}
+
+/* Bilder */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tabellen */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* Zitiertexte */
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* Für Formulare */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Für alle Elemente */
+button,
+input,
+optgroup,
+select,
+textarea {
+
+  border-radius: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+
+  &:active {
+    outline: none;
+
+    
+  }
+}
+input {
+
+
+  &:active, &:focus { // I think you said you wanted focus as well
+    outline: none; // add this
+  }
+
+  &:disabled {
+    outline: none; // add this
+  }
+}
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+/* Buttons und Links */
+button,
+[type='button'],
+[type='reset'],
+[type='submit'],
+a {
+  -webkit-appearance: button;
+}
+
+/* Verhindert, dass iOS ein Standard-Styling für Buttons anwendet */
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+

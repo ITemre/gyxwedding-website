@@ -1,0 +1,52 @@
+// Breadcrumb Styles
+.breadcrumb {
+  margin-top: -10px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: $spacing-2; // Erhöhter Abstand für bessere Berührungsbereich auf mobilen Geräten
+    margin-bottom: $spacing-2;
+    list-style: none;
+    background-color: $light-background;
+height: 50px;
+
+
+    border-radius: $border-radius;
+    align-items: center; // Vertikale Zentrierung der Listenelemente
+  
+    li {
+        font-size: $font-size-m;
+         // Kleinere Schriftgröße
+
+      display: flex;
+      align-items: center; // Vertikale Zentrierung der Texte in den Links
+  
+      &:not(:last-child) {
+        margin-right: $spacing-2;
+  
+        &::after {
+          content: '/';
+          margin-left: $spacing-2;
+          color: $light-text;
+        }
+      }
+  
+      a {
+
+        font-family: 'monte';
+        color: $light-text;
+        text-decoration: none;
+        transition: $trans-basis;
+   
+  
+        &:hover {
+          color: $hover-light-text;
+        }
+      }
+  
+      &.active {
+        color: $light-text;
+        text-decoration: underline;
+        pointer-events: none;
+      }
+    }
+  }

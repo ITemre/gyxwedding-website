@@ -1,0 +1,93 @@
+// Mixin für Lightmode und Darkmode
+@mixin lightmode {
+  background-color: $light-background; // Lightmode: Abdunkeln
+}
+
+@mixin darkmode {
+  background-color: $dark-background; // Darkmode: Aufhellen
+}
+
+// Mixin für Navigation im Lightmode und Darkmode
+@mixin lightmode-navigation {
+
+  background-color: darken($light-background, 10%);
+}
+
+@mixin darkmode-navigation {
+  background-color: lighten($dark-background, 20%);
+}
+
+// Mixin für Navigation im Lightmode und Darkmode
+@mixin lightmode-grid {
+
+  background-color: darken($light-background, 10%);
+}
+
+
+@mixin darkmode-grid {
+  background-color: lighten($dark-background, 20%);
+}
+
+// Anwenden der Modi auf den Body
+body.light {
+  @include lightmode;
+}
+
+body.dark {
+  @include darkmode;
+}
+
+// Mixins für Lightmode und Darkmode für Links
+@mixin lightmode-text {
+  color: $light-text;
+}
+
+@mixin darkmode-text {
+  color: $dark-text;
+}
+
+// Anwenden der Modi für Links
+a {
+  @include lightmode-text;
+
+  // Lightmode-Stil für Links im Darkmode
+  body.dark & {
+    @include darkmode-text;
+  }
+}
+
+// Weitere Elemente können auf ähnliche Weise behandelt werden
+p, span {
+  @include lightmode-text;
+}
+// Weitere Elemente können auf ähnliche Weise behandelt werden
+p, span {
+  @include darkmode-text;
+}
+// Überschriften-Stile für Lightmode und Darkmode
+h1, h2, h3, h4 {
+  @include lightmode-text;
+
+  // Darkmode-Stil für Überschriften
+  body.dark & {
+    @include darkmode-text;
+  }
+}
+
+
+ul {
+
+
+  // Darkmode-Stil für die Liste im Lightmode
+  body.light & {
+    background-color: darken($light-background, 10%);
+  }
+  
+  // Lightmode-Stil für die Liste im Darkmode
+  body.dark & {
+    background-color: lighten($dark-background, 20%);
+  }
+  
+
+}
+

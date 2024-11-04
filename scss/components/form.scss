@@ -1,0 +1,183 @@
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-3;
+    padding: $spacing-3;
+
+    .sidebar {
+        flex: 1;
+        background-color: $dark-background;
+        color: $light-text;
+        padding: $spacing-3;  // Erhöhtes Padding für moderneres Aussehen
+        border-radius: $border-radius;
+        box-shadow: $shadow-l;  // Größeren Schatten für mehr Tiefe
+
+        h2 {
+            font-family: $font-family;
+            font-size: $font-size-m;  // Größere Schriftgröße für Überschriften
+            margin-bottom: $spacing-3;
+            color: $dark-text;
+            padding: 20px;
+            text-align: center;
+
+        }
+
+        ul {
+            list-style: none;
+        
+            padding: 20px;
+
+
+            li {
+                margin-bottom: $spacing-2;
+                display: flex;
+                align-items: center;
+                font-family: $font-family3;
+                font-size: $font-size-m;
+
+                i {
+                    margin-right: $spacing-2;
+                }
+
+                a {
+                    color: $light-text;
+                    text-decoration: none;
+                    transition: $trans-basis;
+
+                    &:hover {
+                        color: $hover-light-text;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact {
+        flex: 2;
+        background-color: $dark-background;  // Angleichung an die Sidebar-Farbe
+        color: $dark-text;
+        padding: $spacing-3;  // Konsistentes Padding mit der Sidebar
+        border-radius: $border-radius;
+        box-shadow: $shadow-l;  // Angleichung an den Schatten der Sidebar
+
+        h2 {
+            font-family: $font-family;
+            font-size: $font-size-m;
+            text-align: center;
+            margin-bottom: $spacing-3;
+            color: $dark-text;
+
+        }
+
+        p {
+            font-family: $font-family3;
+            font-size: $font-size-m;
+            text-align: center;
+            margin-bottom: $spacing-3;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                font-family: $font-family4;
+                font-size: $font-size-s;
+                color: $dark-text;
+                  margin-bottom: $spacing-2;
+            }
+
+            input, textarea {
+                padding: $spacing-2; // Reduziertes Padding für Eingabefelder
+                margin-bottom: $spacing-2;
+                border: 2px solid $light-text;  // Dickerer Rand für moderneren Look
+                border-radius: $border-radius;
+                font-family: $font-family3;
+                font-size: $font-size-m;
+                color: $light-text; // Dunkle Textfarbe für bessere Lesbarkeit
+                background-color: $light-background;  // Hintergrundfarbe hell
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  // Innerer Schatten für Tiefe
+                transition: $trans-basis;
+
+                &:focus {
+                    border-color: $info-color;
+                    box-shadow: 0 0 8px $info-color;  // Stärkerer Fokus-Schatten
+                    outline: none;
+                }
+            }
+
+            .buttonkontakt {
+                padding: $spacing-2 $spacing-3;
+                border: 1px solid $light-background;
+                border-radius: $border-radius;
+               
+
+                color: $dark-text; // Dunkler Text für Kontrast
+                font-family: $font-family3;
+                font-size: $font-size-m;
+                cursor: pointer;
+                transition: $trans-schnell;
+                align-self: center;
+
+                &:hover {
+                   color: $dark-text;
+
+                    transform: scale($active-scale);
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width: $screen-m) {
+    .contact-container {
+        flex-direction: column;
+        padding: 0px;
+
+
+
+
+
+
+        .sidebar {
+            flex: none; // Nimmt die volle Breite des Containers an
+            padding: $spacing-2;
+            margin-bottom: $spacing-3; // Fügt Abstand zwischen Sidebar und Kontaktformular hinzu
+
+            ul {
+                li {
+                    flex-direction: row; // Stapelt Icons und Text vertikal
+                    align-items: flex-start;
+                    
+                    i {
+                        margin-bottom: $spacing-1; // Abstand unter dem Icon
+                    }
+                }
+            }
+        }
+
+        .contact {
+            padding: $spacing-2;
+
+            form {
+                width: 100%; // Formular nimmt die volle Breite ein
+
+                input, textarea {
+                    width: 100%; // Eingabefelder nehmen die volle Breite ein
+                }
+
+                button {
+                    width: 100%; // Button nimmt die volle Breite ein
+                }
+            }
+        }
+    }
+}
+
+
+
+kontakt.htmlsection {
+    padding: 20px;
+    
+}

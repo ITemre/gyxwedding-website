@@ -1,0 +1,95 @@
+.about {
+    background-color: $dark-background;
+    background-size: cover;
+    background-position: center;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $light-text;
+    padding: $spacing-2;
+    margin: 400px;
+
+   .container {
+        max-width: $container-width-m;
+        margin: 0 auto;
+        padding: $spacing-3 0;
+        text-align: center; /* Center-align content horizontally */
+
+        h1 {
+            font-size: $font-size-l;
+
+            margin-bottom: $spacing-2;
+            font-weight: bold;
+            color: $light-text;
+            text-align: center;
+        }
+
+        p {
+    
+
+font-size: $font-size-l;
+
+            line-height: 1.3;
+
+
+            margin-bottom: $spacing-3;
+            opacity: 0.8;
+            transition: opacity 0.3s ease-in-out;
+            text-align: center;
+        }
+    }
+}
+.profilbild{
+    width: 200px; /* Setze die Breite des Container-Divs */
+    height: 200px; /* Setze die Höhe des Container-Divs */
+    
+
+    border-radius: 50%; /* Macht das Container-Div rund */
+    overflow: hidden; /* Verhindert, dass das Bild über den Rahmen hinausragt */
+    background-image: url('images/logo3.webp'); /* Setze das Bild als Hintergrundbild */
+
+}
+
+
+
+
+@media (max-width: $screen-m) {
+    .about {
+    margin: 20px;
+
+    .container {
+        h1 {
+            font-size: $font-size-m;
+        }
+
+        p {
+            color: $light-text !important;
+
+            font-size: 20px;
+
+
+
+        }
+        button{
+
+            font-size: 20px;
+
+        }
+    }
+}
+
+}
+
+.hidden-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.visible-content {
+    display: block;
+    opacity: 1;
+}
+

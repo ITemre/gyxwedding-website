@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GyxWedding</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/a7646bbf3c.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body class="light">
+
+        
+  
+        <header>
+            <div class="content">
+                <label for="toggle" class="hamburger">
+                    <span class="hambuger-line"></span>
+                    <span class="hambuger-line"></span>
+                    <span class="hambuger-line"></span>
+                </label>
+                <input type="checkbox" id="toggle" class="toggle-checkbox" hidden>
+                <nav class="navigation">
+                    <h1 class="company">Gyx Wedding</h1>
+                    <ul class="text-center hover-scale">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="filme.html">Filme</a></li>
+                        <li><a href="fotos.html">Fotos</a></li>
+              
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                    
+                </nav>
+            </header>
+        <main>
+            <section class="hero">
+                <video id="background-video" autoplay muted loop playsinline style="object-fit: cover; width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; z-index: -1;">
+                    <source id="video-source" type="video/mp4">
+                    Ihr Browser unterstützt kein HTML5-Video.
+                </video>
+                
+                <div class="logo">
+                    <img src="images/logo3.webp" alt="GyxFilms Logo">
+                </div>
+         
+                <div class="herobuttons">
+                    <button class="button" id="scrollToAbout">
+                        <i class="fa-sharp fa-solid fa-arrow-down fa-bounce" style="font-size: 2rem;"></i>
+                    </button>
+                </div>
+            </section>
+            <section id="about" class="about">
+                <div class="container hidden-content">
+                    <img class="profilbild" src="images/me.webp" alt="">
+                    <p>Hey, Görkem hier! Seit 2018 erzähle ich Geschichten durch meine Kamera. Jede Aufnahme, ob Foto oder Film, wird bei mir cinematisch und mit viel Herzblut erstellt. Jedes Projekt, das ich annehme, wird mit Liebe zum Detail und einer spannenden Storyline umgesetzt. Qualität steht für mich im Vordergrund, und euer Feedback gibt mir den Antrieb. Ich freue mich, dass du auf meiner Seite vorbeischaust und Teil meiner Reise bist!</p>
+                    <a href="filme.html"><button class="button button-light">Filme</button></a>
+                    <a href="fotos.html"><button class="button button-light">Fotos</button></a>
+                </div>
+            </section>
+            
+
+        </main>
+ 
+    <video id="background-video" autoplay muted preload="auto">
+        <source id="video-source" type="video/mp4">
+       Browser Unterstützt das Video nicht
+    </video>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footerlogo"></div>
+                <p class="footertext">Cinematisch und Zeitlos</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="kontakt.html">Kontakt</a>
+                <p>© 2024 Görkem Yalcin. Alle Rechte vorbehalten.</p>
+                <p>Programmierung,Umsetzung&Design : <a href="https://emre-it.de" target="_blank">www.emre-it.de </a></p>
+            </div>
+        </div>
+    </footer>
+</div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var videoSource = document.getElementById('video-source');
+        var video = document.getElementById('background-video');
+        var currentSrc = '';
+    
+        function setVideoSource() {
+            var newSrc = window.innerWidth <= 768 ? 'images/introfilm2.mp4' : 'images/videoquer.mp4';
+            if (newSrc !== currentSrc) {
+                videoSource.src = newSrc;
+                video.load();
+                video.play();
+                currentSrc = newSrc;
+            }
+        }
+    
+        setVideoSource();
+        window.addEventListener('resize', setVideoSource);
+    });
+    </script>
+    
+    <script src="js/gyx.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+
+.hero {
+ 
+
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $dark-text;
+  padding: $spacing-3;
+
+
+  .hero-content {
+    opacity: 0;
+    text-align: center;
+    max-width: $container-width-m;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    animation: pop-in 5s forwards;
+
+    @keyframes pop-in {
+      0% {
+        transform: opacity(1);
+      }
+      50% {
+        transform: opacity(1.1);
+      }
+      100% {
+        transform: opacity(1);
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      font-size: $font-size-xl;
+      margin-bottom: $spacing-2;
+    }
+
+    a {
+      color: $dark-text;
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin-top: 65px;
+      font-size: $font-size-xl;
+      margin-right: 10px;
+    }
+
+    p {
+      font-size: $font-size-l;
+      color: $dark-background;
+    }
+
+    button {
+      padding: $spacing-2 $spacing-3;
+      background-color: $success-color;
+      border: none;
+      border-radius: $border-radius;
+      box-shadow: $shadow-m;
+      transition: $trans-basis;
+
+      &:hover {
+        background-color: darken($success-color, 10%);
+        transform: scale($active-scale);
+      }
+    }
+  }
+}
+
+.herobuttons {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  margin-bottom: 50px;
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.herobuttons.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+}
+
+.logo img {
+
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.logo img.is-visible {
+  opacity: 1;
+  transform: scale(1);
+  animation: pop-in 1s forwards;
+}
+
+.logo img.scale-down {
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  transform: scale(0.8);
+  opacity: 0.5;
+}
+
+
+
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+

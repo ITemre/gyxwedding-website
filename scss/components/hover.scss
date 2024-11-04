@@ -1,0 +1,78 @@
+
+
+
+.hover-underline {
+  a {
+
+    font-family: $font-family;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    color: $light-text; // Standardfarbe für den Lightmode
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $light-text; // Standardfarbe für den Lightmode
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+
+.hover-scale {
+    a {
+      font-size: $font-size-s !important;
+      font-family: $font-family;
+      transition: transform 0.3s ease;
+  
+      &:hover {
+        transform: scale(1.3);
+
+
+      }
+    }
+  }
+  
+
+
+
+  .hover-color {
+    a {
+      transition: color 0.3s ease;
+      color: inherit; // Standardfarbe erben
+  
+      &:hover {
+        // Lightmode Hover-Farbe
+        body.light & {
+          color: $hover-light-text;
+        }
+  
+        // Darkmode Hover-Farbe
+        body.dark & {
+          color: $dark-text; // Hier kannst du anpassen, falls eine andere Farbe gewünscht ist
+        }
+      }
+    }
+  }
+
+
+  @media (max-width: $screen-m) {
+
+    .hover-scale {
+      a {
+        font-size: 1.3rem;
+    
+
+      }}
+
+
+  }

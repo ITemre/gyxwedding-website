@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GyxWedding</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/a7646bbf3c.js" crossorigin="anonymous"></script>
+
+</head>
+<body class="light">
+
+    <header>
+        <div class="content">
+            <label for="toggle" class="hamburger">
+                <span class="hambuger-line"></span>
+                <span class="hambuger-line"></span>
+                <span class="hambuger-line"></span>
+            </label>
+            <input type="checkbox" id="toggle" class="toggle-checkbox" hidden>
+            <nav class="navigation">
+                <h1 class="company">Gyx Wedding</h1>
+                <ul class="text-center hover-scale">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="filme.html">Filme</a></li>
+                    <li><a href="fotos.html">Fotos</a></li>
+  
+                    <li><a href="leistungen.html">Leistungen</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+
+<main>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+              <li><a href="index.html">Home</a></li>
+        
+              <li class="active" aria-current="page">Filme</li>
+            </ul>
+          </nav>
+        <style>
+         
+        </style>
+
+
+    <div class="grid videos">
+        <div class="half-width">
+            <div class="video-placeholder" data-video="films/mariaramon.mp4">
+                <img src="images/mariaramon.jpg" alt="Video Placeholder">
+                <div class="overlay">
+           
+                    <span class="play-button" data-video="films/mariaramon.mp4">&#9658;</span>
+                
+      
+                </div>
+            </div>
+        </div>
+        <div class="half-width">
+            <div class="video-placeholder" data-video="films/EviFlo.mp4">
+                <img src="images/eviflo.jpg" alt="Video Placeholder">
+                <div class="overlay">
+            
+                    <span class="play-button" data-video="films/EviFlo.mp4">&#9658;</span>
+              
+                </div>
+            </div>
+        </div>
+       
+        <div class="half-width">
+            <div class="video-placeholder" data-video="films/SanemEmira.mp4">
+                <img src="images/sanememira.jpg" alt="Video Placeholder">
+                <div class="overlay">
+             
+                    <span class="play-button" data-video="films/SanemEmira.mp4">&#9658;</span>
+                 
+                </div>
+            </div>
+        </div>
+        <div class="half-width">
+            <div class="video-placeholder" data-video="films/AylinMurat.mp4">
+                <img src="images/AylinMurat.jpg" alt="Video Placeholder">
+                <div class="overlay">
+           
+                    <span class="play-button" data-video="films/AylinMurat.mp4">&#9658;</span>
+                  
+                </div>
+            </div>
+        </div>
+        <div class="half-width">
+            <div class="video-placeholder" data-video="films/JoannaEnes.mp4">
+                <img src="images/joannaenes.jpg" alt="Video Placeholder">
+                <div class="overlay">
+                
+                    <span class="play-button" data-video="films/JoannaEnes.mp4">&#9658;</span>
+                 
+                </div>
+            </div>
+        </div>
+        <div class="half-width">
+            <div class="video-placeholder" data-video="films/TatiaAlex.mp4">
+                <img src="images/tatiaalex.jpg" alt="Video Placeholder">
+                <div class="overlay">
+                  
+                    <span class="play-button" data-video="films/TatiaAlex.mp4">&#9658;</span>
+                  
+                </div>
+            </div>
+        </div>
+    </div>  </div>
+    
+</main>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <div class="footerlogo"></div>
+            <p class="footertext">Cinematisch und Zeitlos</p>
+        </div>
+        <div class="footer-social">
+            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="footer-links">
+            <a href="impressum.html">Impressum</a>
+            <a href="kontakt.html">Kontakt</a>
+            <p>© 2024 Görkem Yalcin. Alle Rechte vorbehalten.</p>
+            <p>Programmierung,Umsetzung&Design : <a href="https://emre-it.de" target="_blank">www.emre-it.de </a></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded and parsed');
+
+    // Video play buttons
+    const playButtons = document.querySelectorAll('.play-button');
+    const overlays = document.querySelectorAll('.overlay');
+
+    if (playButtons.length === 0) {
+        console.log('No play buttons found');
+    } else {
+        playButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                const videoSrc = this.getAttribute('data-video');
+                console.log(`Opening video: ${videoSrc}`);
+                openVideoModal(videoSrc);
+                event.stopPropagation();
+            });
+        });
+    }
+
+    if (overlays.length === 0) {
+        console.log('No overlays found');
+    } else {
+        overlays.forEach(overlay => {
+            overlay.addEventListener('click', function(event) {
+                const videoSrc = this.querySelector('.play-button').getAttribute('data-video');
+                console.log(`Opening video from overlay: ${videoSrc}`);
+                openVideoModal(videoSrc);
+                event.stopPropagation();
+            });
+        });
+    }
+
+    // Close modal on ESC key press
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+});
+
+function openVideoModal(src) {
+    console.log(`Creating modal for video: ${src}`);
+
+    const modal = document.createElement('div');
+    modal.classList.add('video-modal', 'show');
+    modal.innerHTML = `
+        <div class="video-modal-content">
+            <span class="video-modal-close">&times;</span>
+            <video controls autoplay>
+                <source src="${src}" type="video/mp4">
+                Ihr Browser unterstützt kein HTML5-Video.
+            </video>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    modal.querySelector('.video-modal-close').addEventListener('click', function() {
+        console.log('Closing modal');
+        closeModal();
+    });
+
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            console.log('Click outside video, closing modal');
+            closeModal();
+        }
+    });
+
+    let startY;
+
+    modal.addEventListener('touchstart', (e) => {
+        startY = e.touches[0].clientY;
+    });
+
+    modal.addEventListener('touchend', (e) => {
+        const endY = e.changedTouches[0].clientY;
+        const deltaY = startY - endY;
+
+        if (Math.abs(deltaY) > 50) {
+            console.log('Swipe detected, closing modal');
+            closeModal();
+        }
+    });
+}
+
+function closeModal() {
+    const modal = document.querySelector('.video-modal.show');
+    if (modal) {
+        modal.classList.remove('show');
+        setTimeout(() => {
+            document.body.removeChild(modal);
+        }, 300); // Timeout for transition effect
+    }
+}
+</script>
+
+
+</body>
+</html>

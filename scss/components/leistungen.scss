@@ -1,0 +1,58 @@
+.services {
+    text-align: center;
+  
+
+
+    .services-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacing-3; // Fügt Abstand zwischen den Karten hinzu
+
+        .service-card {
+            background-color: $dark-background;
+            color: $light-text;
+            padding: $spacing-3;
+            border-radius: $border-radius;
+            box-shadow: $shadow-l;
+            transition: $trans-basis;
+            width: 100%; // Standardmäßig die volle Breite auf kleinen Bildschirmen
+            margin-bottom: $spacing-3; // Abstand nach unten für jede Karte
+         
+
+
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
+            }
+
+            img {
+                width: 70%;
+                border-radius: $border-radius;
+                margin-bottom: $spacing-2;
+            }
+            
+
+            h1 {
+
+                font-family: $font-family;
+                font-size: $font-size-m;
+                margin-bottom: $spacing-2;
+                color: $dark-text;
+            }
+
+            p {
+                font-family: $font-family4;
+                font-size: $font-size-m;
+                line-height:   1;
+            }
+        }
+    }
+}
+
+@media (min-width: $screen-m) {
+    .services-grid .service-card {
+        flex: 1 1 calc(33.333% - $spacing-3); // Berechnet die Breite, um drei Karten nebeneinander zu ermöglichen
+        max-width: calc(33.333% - $spacing-3); // Stellt sicher, dass die Karten nicht breiter als ein Drittel sind
+    }
+}
+
